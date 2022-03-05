@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,500&display=swap');
+:root {
+    --primary: #1603be;
+    --lightblue: rgb(175, 233, 235);
+    --aesthetic-1: #ffffff;
+    --aesthetic-2: #c9cacf;
+    --greyDark: #4b4e53;
+}
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+    background: var(--aesthetic-1);
+    font-family: 'Raleway', sans-serif;
+}
+#header {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#header h2 {
+    padding: 10px 20px;
+    color: var(--primary);
+    font-size: 30px;
+    text-align: center;
+}
+#header #value {
+    padding: 10px 20px;
+    border-radius: 16px;
+    color: var(--primary);
+    width: 50%;
+    max-width: 450px;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+#prompts {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#content {
+    height: 60vh;
+}
+.cardSpace{
+    width: 70vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.easyCard-palette,
+.hardCard-palette {
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    width: 12vw;
+    height: 12vw;
+    max-width: 300px;
+    max-height: 300px;
+    min-width: 70px;
+    min-height: 70px;
+    margin: 20px;
+    background-color: #0d1401;
+    box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.7s;
+}
+.hard {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.btn {
+    width: 240px;
+    height: 64px;
+    border-radius: 16px;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: var(--greyDark);
+}
+.btn:hover {
+    color: var(--primary);
+}
+.btn p {
+    font-size: 24px;
+}
+
+
+.segmented-control {
+    grid-column: 0.75;
+    grid-row: 0.5;
+    width: 13.8rem;
+    height: 4rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0 20px;
+}
+.segmented-control input {
+    display: none;
+}
+.segmented-control > input:checked + label {
+    transition: all 0.7s ease;
+    color: var(--primary);
+}
+.segmented-control-1, .segmented-control-2 {
+    width: 6.8rem;
+    height: 3.6rem;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--greyDark);
+    transition: all 0.5s ease;
+}
+.segmented-control-1:hover, .segmented-control-2:hover {
+    color: var(--primary);
+}
+.segmented-control__color {
+    position: absolute;
+    height: 3.6rem;
+    width: 6.4rem;
+    margin-left: 0.3rem;
+    border-radius: 0.8rem;
+    box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyDark);
+    pointer-events: none;
+}
+#tab-1:checked ~ .segmented-control__color {
+    transform: translateX(0);
+    transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+#tab-2:checked ~ .segmented-control__color {
+    transform: translateX(6.8rem);
+    transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+#status {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    font-size: 25px;
+    text-align: center;
+    opacity: 0;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-position: below;
+}
